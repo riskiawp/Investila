@@ -38,8 +38,12 @@
             <li class="nav-item"><a class="nav-link" href="{{ url('user/about-us') }}">About Us</a></li> 
             <li class="nav-item"><a class="nav-link" href="{{ url('user/product') }}">Product</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('user/dashboard') }}">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="package.html">Logout</a></li>
+            @if (Session::get('login'))
+            <li class="nav-item"><a class="nav-link" >{{Session::get('name')}}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('logout')}}">Logout</a></li>
+            @else
+                <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">Login</a></li>
+            @endif
             </ul>
         </div> 
         </div>

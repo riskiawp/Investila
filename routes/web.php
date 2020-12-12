@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +19,21 @@ Route::get('login', function () {
     return view('login');
 });
 
+Route::post('login', [UserController::class, 'login']);
+
+
 Route::get('register', function () {
     return view('register');
 });
 
- //Route Admin
-Route::get('/', function () {
-    return view('admin/dashboard');
-});
+Route::post('register', [UserController::class, 'register']);
+
+
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('logout', [UserController::class,'logout']);
+
+ //Route Admi
 Route::get('admin/input-artikel', function () {
     return view('admin/input-artikel');
 });

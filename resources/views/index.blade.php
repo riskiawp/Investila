@@ -153,14 +153,14 @@
             </div>
             <div class="form-group">
                 <div class="input-group">
-                <input type="number" class="form-control" placeholder="Jumlah Lot">
+                <input type="number" class="form-control" placeholder="Jumlah Lot" onchange="ubahKeuntungan()" id="keuntungan">
                 </div>
             </div>
             <div class="form-group">
                 <button class="button border-0 mt-3" type="submit">Check</button>
             </div>
             <p>Keuntungan Anda Per Tahun</p>
-            <p>Rp. 500.000,00</p>
+            <p id="hasil">Rp. 500.000,00</p>
             </form>
         </div>
 
@@ -226,6 +226,22 @@
     </div>
     </div>
 </section>
+
+<script>
+function convertToRupiah(angka)
+{
+	var rupiah = '';		
+	var angkarev = angka.toString().split('').reverse().join('');
+	for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+	return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('');
+}
+
+function ubahKeuntungan() {
+  var x = document.getElementById("keuntungan").value;
+  document.getElementById("hasil").innerHTML = convertToRupiah(x * 500000);
+}
+
+</script>
 <!--================Blog section End =================-->
 @endsection
 
