@@ -74,7 +74,7 @@
               </div>
             </div>
             <div class="mt-5 text-muted text-center">
-              Sudah punya akun? <a href="auth-login.html">Login</a>
+              Sudah punya akun? <a href="{{ url('login') }}">Login</a>
             </div>
             <div class="simple-footer">
               Copyright &copy; Nila 2020

@@ -43,6 +43,12 @@ Route::get('admin/tabel-artikel', function () {
 Route::get('admin/update-artikel', function () {
     return view('admin/update-artikel');
 });
+Route::get('admin/tabel-lot/input-lot', function () {
+    return view('admin/input-lot');
+});
+Route::get('admin/tabel-lot/update-lot', function () {
+    return view('admin/update-lot');
+});
 
 //Route User
 Route::get('user/index', function () {

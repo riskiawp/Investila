@@ -16,7 +16,6 @@
                 <h4><i class="fas fa-map-marker-alt"></i> Lokasi : Jalan Sukabirus Bandung Bojongsoang</h4><hr>
                 <h4><i class="fas fa-percent"></i> ROI : 23,01 / Tahun</h4><hr>
                 <h4><i class="fas fa-file-alt"></i> Kontrak : 12 Bulan</h4><hr>
-                <h4><i class="fas fa-chart-line"></i> Panen : 1-2 Bulan</h4><hr>
                 <h4><i class="fas fa-shopping-cart"></i> Beli : Minimal 5 Slot</h4><hr>
                 <h4><i class="fas fa-exclamation-triangle"></i> Kategori Resiko : Rendah</h4><hr>
                 <form class="form-contact contact_form" action="#">

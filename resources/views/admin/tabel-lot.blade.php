@@ -14,17 +14,7 @@
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                 <div class="card-header">
-                    <h4>Tabel Lot</h4>
-                    <div class="card-header-form">
-                    <form>
-                        <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                        </div>
-                        </div>
-                    </form>
-                    </div>
+                <a href="{{ url('admin/tabel-lot/input-lot') }}" class="btn btn-sm btn-primary">Input Lot</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -32,6 +22,8 @@
                         <tr>
                         <th>No</th>
                         <th>Jenis Ikan</th>
+                        <th>ROI</th>
+                        <th>Lokasi</th>
                         <th>Jumlah Lot</th>
                         <th>Action</th>
                         </tr>
@@ -39,17 +31,10 @@
                         <td>1</td>
                         <td>riskiawp</td>
                         <td>Penarikan</td>
-                        <td>
-                            <a href="#" class="btn btn-sm btn-primary">Update</a>
-                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td>1</td>
                         <td>riskiawp</td>
                         <td>Penarikan</td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-primary">Update</a>
+                            <a href="{{ url('admin/tabel-lot/update-lot') }}" class="btn btn-sm btn-primary">Update</a>
                             <a href="#" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                         </tr>
