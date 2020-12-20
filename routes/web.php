@@ -39,9 +39,7 @@ Route::get('logout', [UserController::class,'logout']);
 Route::get('admin/input-artikel', function () {
     return view('admin/input-artikel');
 });
-Route::get('admin/tabel-user', function () {
-    return view('admin/tabel-user');
-});
+Route::get('admin/tabel-user', [UserController::class, 'index']);
 Route::get('admin/tabel-transaksi', function () {
     return view('admin/tabel-transaksi');
 });
@@ -84,6 +82,10 @@ Route::get('article/update/{id}', [ArticleController::class, 'update_article']);
 Route::post('article/update', [ArticleController::class, 'update']);
 
 Route::get('article/delete/{id}', [ArticleController::class, 'delete_article']);
+
+//delete user
+Route::get('admin/tabel-user/{id}', [UserController::class, 'delete_user']);
+
 
 
 

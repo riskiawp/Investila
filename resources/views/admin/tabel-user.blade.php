@@ -23,7 +23,6 @@
                             <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                         </div>
                         </div>
-                    </form>
                     </div>
                 </div>
                 <div class="card-body">
@@ -31,61 +30,23 @@
                     <table class="table table-bordered table-md">
                         <tr>
                         <th>No</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Password</th>
+                        <th>Name</th>
                         <th>Email</th>
+                        <th>Password</th>
                         <th>Action</th>
                         </tr>
+                        @foreach ($user as $key => $usr)
                         <tr>
-                        <td>1</td>
-                        <td>Riski</td>
-                        <td>Ananda</td>
-                        <td>riskihelo</td>
-                        <td>xb4jsk0ZhB42ksjdn0BS991jfksn80</td>
-                        <td>riskiheloworld@yah00.c0m</td>
+                        <td>{{$key+1}}</td>
+                        <td>{{$usr->name}}</td>
+                        <td>{{$usr->email}}</td>
+                        <td>{{$usr->password}}</td>
                         <td>
                             <a href="#" class="btn btn-sm btn-primary">Update</a>
-                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            <a href="{{url('admin/tabel-user'). '/' . $usr->id}}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                         </tr>
-                        <tr>
-                        <td>1</td>
-                        <td>Riski</td>
-                        <td>Ananda</td>
-                        <td>riskihelo</td>
-                        <td>xb4jsk0ZhB42ksjdn0BS991jfksn80</td>
-                        <td>riskiheloworld@yah00.c0m</td>
-                        <td>
-                            <a href="#" class="btn btn-sm btn-primary">Update</a>
-                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td>1</td>
-                        <td>Riski</td>
-                        <td>Ananda</td>
-                        <td>riskihelo</td>
-                        <td>xb4jsk0ZhB42ksjdn0BS991jfksn80</td>
-                        <td>riskiheloworld@yah00.c0m</td>
-                        <td>
-                            <a href="#" class="btn btn-sm btn-primary">Update</a>
-                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td>1</td>
-                        <td>Riski</td>
-                        <td>Ananda</td>
-                        <td>riskihelo</td>
-                        <td>xb4jsk0ZhB42ksjdn0BS991jfksn80</td>
-                        <td>riskiheloworld@yah00.c0m</td>
-                        <td>
-                            <a href="#" class="btn btn-sm btn-primary">Update</a>
-                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
-                        </tr>
+                        @endforeach
                     </table>
                     </div>
                 </div>
@@ -109,6 +70,7 @@
                 </div>
             </div>
         </div>
+    </form>
         </section>
     </div>
 @endsection

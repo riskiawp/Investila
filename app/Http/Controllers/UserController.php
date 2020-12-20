@@ -42,5 +42,15 @@ class UserController extends Controller
         return redirect('/login')->with('success', 'anda telah logout');
 
     }
+
+    public function index(){
+        $user = User::all();
+        return view('admin/tabel-user', compact('user'));
+    }
+
+    public function delete_user($id){
+        User::findOrFail($id)->delete();
+        return redirect('/admin/tabel-user')->with('success', 'berhasil delete');
+    }
 }
 
