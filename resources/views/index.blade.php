@@ -175,7 +175,7 @@
 <section class="section-padding bg-gray">
     <div class="container">
     <div class="section-intro text-center pb-90px">
-        <h2>Our Artikel</h2>
+        <h2>Our Articlel</h2>
     </div>
 
     <div class="row">

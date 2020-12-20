@@ -36,26 +36,18 @@
                         <th>File</th>
                         <th>Action</th>
                     </tr>
+                    @foreach ($artikel as $key => $art)
                     <tr>
-                        <td>1</td>
-                        <td>Ikan Nila A</td>
-                        <td>ABS.jpg</td>
-                        <td>Ikan Nila adalah hahaha</td>
+                        <td>{{$key+1}}</td>
+                        <td>{{$art->title}}</td>
+                        <td>{{$art->image}}</td>
+                        <td>{{$art->content}}</td>
                         <td>
-                        <a href="#" class="btn btn-sm btn-primary">Update</a>
-                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{url('article/update/'). '/' . $art->id}}" class="btn btn-sm btn-primary">Update</a>
+                        <a href="{{url('article/delete/'). '/' . $art->id}}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Ikan Nila A</td>
-                        <td>ABS.jpg</td>
-                        <td>Ikan Nila adalah hahaha</td>
-                        <td>
-                        <a href="#" class="btn btn-sm btn-primary">Update</a>
-                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
-                    </tr>
+                    @endforeach
                     </table>
                 </div>
                 </div>

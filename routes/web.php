@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +48,8 @@ Route::get('admin/tabel-transaksi', function () {
 Route::get('admin/tabel-lot', function () {
     return view('admin/tabel-lot');
 });
-Route::get('admin/tabel-artikel', function () {
-    return view('admin/tabel-artikel');
-});
+Route::get('admin/tabel-artikel', [ArticleController::class, 'tampil_article']);
+
 Route::get('admin/update-artikel', function () {
     return view('admin/update-artikel');
 });
@@ -75,3 +76,17 @@ Route::get('user/dashboard', function () {
 Route::get('user/about-us', function () {
     return view('user/about-us');
 });
+//Article
+Route::post('article', [ArticleController::class, 'input']);
+
+Route::get('article/update/{id}', [ArticleController::class, 'update_article']);
+
+Route::post('article/update', [ArticleController::class, 'update']);
+
+Route::get('article/delete/{id}', [ArticleController::class, 'delete_article']);
+
+
+
+
+
+

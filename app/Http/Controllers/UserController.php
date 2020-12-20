@@ -34,7 +34,7 @@ class UserController extends Controller
             'is_admin'=> 0
         ]);
 
-        return redirect('/login')->with('success', 'berhasil regis!');
+        return redirect('/login')->with('success', 'berhasil regist!');
     }
 
     public function logout(){

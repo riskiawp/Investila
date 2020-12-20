@@ -11,22 +11,23 @@
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
-                        <form>
+                        <form action="{{url('article')}}" method="POST">
+                            @csrf
                         <div class="card-header">
                         <h4>Input Artikel</h4>
                         </div>
                         <div class="card-body">
                         <div class="form-group">
                             <label>Judul Artikel</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="title">
                         </div>
                         <div class="form-group">
                             <label>Konten Artikel</label>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="content"></textarea>
                         </div>
                         <div class="form-group">
                             <label>File</label>
-                            <input type="file" class="form-control">
+                            <input type="file" class="form-control" name="image">
                         </div>
                         </div>
                         <div class="card-footer text-right">
