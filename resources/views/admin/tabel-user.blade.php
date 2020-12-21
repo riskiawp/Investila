@@ -42,7 +42,6 @@
                         <td>{{$usr->email}}</td>
                         <td>{{$usr->password}}</td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-primary">Update</a>
                             <a href="{{url('admin/tabel-user'). '/' . $usr->id}}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                         </tr>
