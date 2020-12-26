@@ -9,47 +9,28 @@
     </div>
 
     <div class="row">
+        @foreach ($lot as $key => $l)
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
         <div class="card-blog">
             <img class="card-img rounded-0" src="{{ asset('assetss/img/blog/blog-1.png') }}" alt="">
             <div class="card-blog-body">
             <a href="#">
-                <h4>Jual Beli Benih Ikan Nila Arwana</h4>
+                <h4>nama apalah ini gatau ntar tolong di gantiin lagi ea makasi :D</h4>
             </a>
             <ul class="card-blog-info">
                 <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
             </ul>
-            <p>Jl. Sukabumi Kec. Bojongsoang Kab. Bandung Jawa Barat </p>
+            <p>{{$l->lokasi}}</p>
             <br>
             <center>
-                <h4>RETURN 20,01 / Tahun</h4>
+                <h4>RETURN {{$l->roi}}/ Tahun</h4>
             </center>
             <div class="text-center">
-                <a class="button button-hero mt-4" href="{{ url('user/product/detail-product') }}">View</a>
+                <a class="button button-hero mt-4" href="{{ url('user/product/detail-product'). '/' . $l->id }}">View</a>
             </div>
             </div>
         </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-        <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('assetss/img/blog/blog-2.png') }}" alt="">
-            <div class="card-blog-body">
-            <a href="#">
-                <h4>Jual Beli Benih Ikan Nila Arwana</h4>
-            </a>
-            <ul class="card-blog-info">
-                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
-            </ul>
-            <p>Jl. Sukabumi Kec. Bojongsoang Kab. Bandung Jawa Barat </p>
-            <br>
-            <center>
-                <h4>RETURN 20,01 / Tahun</h4>
-            </center>
-            <div class="text-center">
-                <a class="button button-hero mt-4" href="{{ url('user/product/detail-product') }}">View</a>
-            </div>
-            </div>
+        @endforeach
         </div>
         </div>
 </section>

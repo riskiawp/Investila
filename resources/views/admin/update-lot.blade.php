@@ -11,30 +11,33 @@
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
-                    <form>
+                    <form action="{{url('lot/update')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$lot->id}}">
                         <div class="card-header">
                         <h4>Update Lot</h4>
                         </div>
                         <div class="card-body">
                         <div class="form-group">
                             <label>Jenis Ikan</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="ikan" class="form-control" value="{{$lot->ikan}}">
                         </div>
                         <div class="form-group">
                             <label>Return Per Tahun</label>
-                            <input type="number" class="form-control">
+                            <input name="roi" class="form-control" value="{{$lot->roi}}">
                         </div>
                         <div class="form-group">
                             <label>Lokasi</label>
-                            <textarea class="form-control"></textarea>
+                            <textarea name="lokasi" class="form-control" >{{$lot->lokasi}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Jumlah Lot</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="jumlah_lot" class="form-control" value="{{$lot->jumlah_lot}}">
                         </div>
                         <div class="form-group">
                             <label>File</label>
-                            <input type="file" class="form-control">
+                            <input type="file"  name="image" class="form-control" value="{{$lot->image}}">
+                            <input type="hidden"  name="image_text" class="form-control" value="{{$lot->image}}">
                         </div>
                     </div>
                         <div class="card-footer text-right">

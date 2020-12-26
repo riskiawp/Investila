@@ -179,50 +179,24 @@
     </div>
 
     <div class="row">
+    @foreach ($artikel as $key => $art)
+
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
         <div class="card-blog">
+
             <img class="card-img rounded-0" src="{{ asset('assetss/img/blog/blog-1.png') }}" alt="">
             <div class="card-blog-body">
             <a href="#">
-                <h4>Forest responds to consultation smoking in al fresco.</h4>
+                <h4>{{$art->title}}</h4>
             </a>
             <ul class="card-blog-info">
                 <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
             </ul>
-            <p>Varius metus morbi ferme libero vehic on porta malesuada ut interdu estmales torquent vehicula parturient </p>
+            <p>{{$art->content}} </p>
             </div>
         </div>
         </div>
-
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-        <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('assetss/img/blog/blog-2.png') }}" alt="">
-            <div class="card-blog-body">
-            <a href="#">
-                <h4>Forest responds to consultation smoking in al fresco.</h4>
-            </a>
-            <ul class="card-blog-info">
-                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
-            </ul>
-            <p>Varius metus morbi ferme libero vehic on porta malesuada ut interdu estmales torquent vehicula parturient </p>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-        <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('assetss/img/blog/blog-3.png') }}" alt="">
-            <div class="card-blog-body">
-            <a href="#">
-                <h4>Forest responds to consultation smoking in al fresco.</h4>
-            </a>
-            <ul class="card-blog-info">
-                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
-            </ul>
-            <p>Varius metus morbi ferme libero vehic on porta malesuada ut interdu estmales torquent vehicula parturient </p>
-            </div>
-        </div>
-        </div>
+        @endforeach
     </div>
     </div>
 </section>

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\LotController;
+use App\Http\Controllers\ProductController;
+
 
 
 /*
@@ -43,9 +46,7 @@ Route::get('admin/tabel-user', [UserController::class, 'index']);
 Route::get('admin/tabel-transaksi', function () {
     return view('admin/tabel-transaksi');
 });
-Route::get('admin/tabel-lot', function () {
-    return view('admin/tabel-lot');
-});
+Route::get('admin/tabel-lot', [LotController::class, 'tampil_lot']);
 Route::get('admin/tabel-artikel', [ArticleController::class, 'tampil_article']);
 
 Route::get('admin/update-artikel', function () {
@@ -54,20 +55,16 @@ Route::get('admin/update-artikel', function () {
 Route::get('admin/tabel-lot/input-lot', function () {
     return view('admin/input-lot');
 });
-Route::get('admin/tabel-lot/update-lot', function () {
-    return view('admin/update-lot');
-});
+Route::get('admin/tabel-lot/update-lot/{id}', [LotController::class, 'detail_lot']);
 
 //Route User
 Route::get('user/index', function () {
     return view('user/index');
 });
-Route::get('user/product', function () {
-    return view('user/product');
-});
-Route::get('user/product/detail-product', function () {
-    return view('user/detail-product');
-});
+Route::get('user/product', [ProductController::class, 'tampil_produk']);
+
+Route::get('user/product/detail-product/{id}', [ProductController::class, 'detail_produk']);
+
 Route::get('user/dashboard', function () {
     return view('user/dashboard');
 });
@@ -86,8 +83,14 @@ Route::get('article/delete/{id}', [ArticleController::class, 'delete_article']);
 //delete user
 Route::get('admin/tabel-user/{id}', [UserController::class, 'delete_user']);
 
+//lots
+Route::post('lot', [LotController::class, 'input_lot']);
 
+Route::get('lot/update/{id}', [LotController::class, 'detail_lot']);
 
+Route::post('lot/update', [LotController::class, 'update_lot']);
+
+Route::get('lot/delete/{id}', [LotController::class, 'delete_lot']);
 
 
 

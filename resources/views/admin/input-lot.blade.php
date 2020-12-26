@@ -11,30 +11,31 @@
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
-                    <form>
+                    <form action="{{url('lot')}}" method="POST">
+                        @csrf
                         <div class="card-header">
                         <h4>Input Lot</h4>
                         </div>
                         <div class="card-body">
                         <div class="form-group">
                             <label>Jenis Ikan</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="ikan" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Return Per Tahun</label>
-                            <input type="number" class="form-control">
+                            <input name="roi" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Lokasi</label>
-                            <textarea class="form-control"></textarea>
+                            <textarea name="lokasi" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <label>Jumlah Lot</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="jumlah_lot" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>File</label>
-                            <input type="file" class="form-control">
+                            <input type="file" name="image" class="form-control">
                         </div>
                     </div>
                         <div class="card-footer text-right">

@@ -27,17 +27,20 @@
                         <th>Jumlah Lot</th>
                         <th>Action</th>
                         </tr>
+                        @foreach ($lot as $key => $l)
+
                         <tr>
-                        <td>1</td>
-                        <td>riskiawp</td>
-                        <td>Penarikan</td>
-                        <td>riskiawp</td>
-                        <td>Penarikan</td>
+                        <td>{{$key+1}}</td>
+                        <td>{{$l->ikan}}</td>
+                        <td>{{$l->roi}}</td>
+                        <td>{{$l->lokasi}}</td>
+                        <td>{{$l->jumlah_lot}}</td>
                         <td>
-                            <a href="{{ url('admin/tabel-lot/update-lot') }}" class="btn btn-sm btn-primary">Update</a>
-                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            <a href="{{url('lot/update/'). '/' . $l->id}}" class="btn btn-sm btn-primary">Update</a>
+                            <a href="{{url('lot/delete/'). '/' . $l->id}}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                         </tr>
+                        @endforeach
                     </table>
                     </div>
                 </div>

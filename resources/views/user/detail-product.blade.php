@@ -13,8 +13,8 @@
             <div class="col-lg-7 col-md-12 align-self-center about-content">
             <tr>
                 <td>
-                <h4><i class="fas fa-map-marker-alt"></i> Lokasi : Jalan Sukabirus Bandung Bojongsoang</h4><hr>
-                <h4><i class="fas fa-percent"></i> ROI : 23,01 / Tahun</h4><hr>
+                <h4><i class="fas fa-map-marker-alt"></i> Lokasi : {{$lot->lokasi}}</h4><hr>
+                <h4><i class="fas fa-percent"></i> ROI : {{$lot->roi}} / Tahun</h4><hr>
                 <h4><i class="fas fa-file-alt"></i> Kontrak : 12 Bulan</h4><hr>
                 <h4><i class="fas fa-shopping-cart"></i> Beli : Minimal 5 Slot</h4><hr>
                 <h4><i class="fas fa-exclamation-triangle"></i> Kategori Resiko : Rendah</h4><hr>
