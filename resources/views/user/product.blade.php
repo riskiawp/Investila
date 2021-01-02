@@ -12,10 +12,10 @@
         @foreach ($lot as $key => $l)
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
         <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('assetss/img/blog/blog-1.png') }}" alt="">
+            <img class="card-img rounded-0" src="{{ asset('assets/img/lot'.'/'.$l->image) }}" alt="">
             <div class="card-blog-body">
             <a href="#">
-                <h4>nama apalah ini gatau ntar tolong di gantiin lagi ea makasi :D</h4>
+                <h4>{{$l->ikan}}</h4>
             </a>
             <ul class="card-blog-info">
                 <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
@@ -30,8 +30,9 @@
             </div>
             </div>
         </div>
-        @endforeach
         </div>
+        @endforeach
+
         </div>
 </section>
 

@@ -17,8 +17,14 @@ class UserController extends Controller
                 Session::put('login', true);
                 Session::put('name', $user->name);
                 Session::put('email', $request->email);
-                Session::put('is_admin', true);
-                return redirect('/');
+
+                if($user->is_admin == true){
+                    Session::put('is_admin', true);
+                    return redirect('/admin/tabel-user');
+                } else if($user->is_admin == false){
+                    Session::put('is_admin', false);
+                    return redirect('/');
+                } 
             }else{
                 return redirect('/login')->with('error', 'Gagal Login!');
             }

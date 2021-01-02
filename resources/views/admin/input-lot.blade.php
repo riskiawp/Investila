@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
-                    <form action="{{url('lot')}}" method="POST">
+                    <form action="{{url('lot')}}" method="POST" enctype='multipart/form-data' >
                         @csrf
                         <div class="card-header">
                         <h4>Input Lot</h4>

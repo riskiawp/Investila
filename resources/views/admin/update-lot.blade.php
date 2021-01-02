@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
-                    <form action="{{url('lot/update')}}" method="POST">
+                    <form action="{{url('lot/update')}}" method="POST" enctype='multipart/form-data'>
                         @csrf
                         <input type="hidden" name="id" value="{{$lot->id}}">
                         <div class="card-header">

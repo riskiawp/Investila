@@ -18,24 +18,31 @@ class LotController extends Controller
     }
 
     public function input_lot(Request $request){
+        $request->image->move(public_path('assets/img/lot'),  $request->ikan.'.'.$request->image->getClientOriginalExtension());
         Lot::create([
             'ikan' => $request->ikan,
             'roi' => $request->roi,
             'lokasi' => $request->lokasi,
             'jumlah_lot' => $request->jumlah_lot,
-            'image' => $request->image
+            'image' =>  $request->ikan.'.'.$request->image->getClientOriginalExtension()
         ]);
         return redirect('/admin/tabel-lot')->with('success', 'berhasil input');
 
     }
 
     public function update_lot(Request $request){
+        if($request->image){
+            $name = $request->ikan.'.'.$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('assets/img/lot'),  $name);
+        }else{
+            $name = $request->image_text;
+        }
         Lot::where('id',$request->id)->first()->update([
             'ikan' => $request->ikan,
             'roi' => $request->roi,
             'lokasi' => $request->lokasi,
             'jumlah_lot' => $request->jumlah_lot,
-            'image' => $request->image_text
+            'image' => $name
         ]);
         return redirect('/admin/tabel-lot')->with('success', 'berhasil input');
 

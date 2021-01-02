@@ -184,7 +184,7 @@
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
         <div class="card-blog">
 
-            <img class="card-img rounded-0" src="{{ asset('assetss/img/blog/blog-1.png') }}" alt="">
+            <img class="card-img rounded-0" src="{{ asset('assets/img/artikel').'/'.$art->image }}" alt="">
             <div class="card-blog-body">
             <a href="#">
                 <h4>{{$art->title}}</h4>

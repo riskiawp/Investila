@@ -14,7 +14,7 @@
                         <div class="card-header">
                         <h4>Input Artikel</h4>
                         </div>
-                        <form action="{{url('article/update')}}" method="POST"> 
+                        <form action="{{url('article/update')}}" method="POST" enctype='multipart/form-data'> 
                             @csrf
                             <input type="hidden" name="id" value="{{$artikel->id}}">
                         <div class="card-body">
@@ -29,6 +29,7 @@
                         <div class="form-group">
                             <label>File</label>
                             <input type="file" class="form-control" name="image" >
+                            <input type="hidden"  name="image_text" class="form-control" value="{{$artikel->image}}">
                         </div>
                         </div>
                         <div class="card-footer text-right">
