@@ -31,7 +31,7 @@
                         <table class="table table-bordered table-md">
                             <tr>
                             <th>No</th>
-                            <th>Username</th>
+                            <th>nama</th>
                             <th>Jenis Ikan</th>
                             <th>Jumlah Lot</th>
                             <th>Jumlah Keuntungan</th>
@@ -39,20 +39,26 @@
                             <th>Date</th>
                             <th>Action</th>
                             </tr>
-                                
+                             @foreach ($trans as $key => $tr)
+                            
                             <tr>
-                            <td>1</td>
-                            <td>riskiawp</td>
-                            <td>Penarikan</td>
-                            <td>750.000</td>
-                            <td>90909090</td>
+                            <td>{{$key+1}}</td>
+                            <td>{{$tr->user->name}}</td>
+                            <td>{{$tr->id_lot}}</td>
+                            <td>{{$tr->jumlah}}</td>
+                            <td>{{$tr->keuntungan}}</td>
+                            @if ($tr->status)
                             <td>Dapat Ditarik</td>
-                            <td>1.250K</td>
+                            @else
+                            <td>Tidak Dapat Ditarik</td>
+                            @endif
+                            <td>{{$tr->created_at}}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-primary">Update</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="{{url('admin/tabel-transaksi'). '/' . $tr->id}}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                             </tr>
+                            @endforeach
                         </table>
                         </div>
                     </div>

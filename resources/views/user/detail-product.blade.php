@@ -18,11 +18,13 @@
                 <h4><i class="fas fa-file-alt"></i> Kontrak : 12 Bulan</h4><hr>
                 <h4><i class="fas fa-shopping-cart"></i> Beli : Minimal 5 Slot</h4><hr>
                 <h4><i class="fas fa-exclamation-triangle"></i> Kategori Resiko : Rendah</h4><hr>
-                <form class="form-contact contact_form" action="#">
+                <form class="form-contact contact_form" action="{{url('user/pendanaan')}}" method="POST">
+                    @csrf
+                    <input type="hidden" value="{{$lot->id}}" name="id_lot">
                     <div class="col-sm-12">
                     <div class="row">
                         <div class="col-lg-6">
-                        <input class="form-control" name="name" id="name" type="number" placeholder="Jumlah Lot">
+                        <input class="form-control" name="jumlah" type="number" placeholder="Jumlah Lot" min=5>
                         </div>
                         <div class="col-lg-5">
                         <button type="submit" class="button button-contactForm">INVEST</button>

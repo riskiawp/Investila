@@ -140,7 +140,7 @@
             <h3>Simulasi Keuntungan</h3>
             <form class="search-form" action="#">
             <div class="form-group">
-                <select name="category" id="category">
+                <select name="category" id="category" onchange="ubahJenis()">
                 <option value="disabled" disabled selected>Pilih Kategori</option>
                 <option name="larva">Larva</option>
                 <option name="benih">Benih</option>
@@ -148,19 +148,19 @@
             </div>
             <div class="form-group">
                 <div class="input-group">
-                <input type="number" class="form-control" placeholder="Return Per Tahun">
+                <input type="number" id="roi" class="form-control" placeholder="Return Per Tahun" disabled>
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                <input type="number" class="form-control" placeholder="Jumlah Lot" onchange="ubahKeuntungan()" id="keuntungan">
+                <input type="number" class="form-control" placeholder="Jumlah Lot" id="lot">
                 </div>
             </div>
             <div class="form-group">
-                <button class="button border-0 mt-3" type="submit">Check</button>
+                <button onclick="prosesKeuntungan(); return false;" class="button border-0 mt-3" type="submit">Check</button>
             </div>
             <p>Keuntungan Anda Per Tahun</p>
-            <p id="hasil">Rp. 500.000,00</p>
+            <p id="hasil">Rp. 0,00</p>
             </form>
         </div>
 
@@ -202,6 +202,17 @@
 </section>
 
 <script>
+function ubahJenis() {
+    var category = document.getElementById("category").value;
+        if (category == 'Larva') {
+            category = 28
+        } else {
+            category = 21
+        }
+
+        document.getElementById("roi").value = category;
+}
+
 function convertToRupiah(angka)
 {
 	var rupiah = '';		
@@ -210,9 +221,17 @@ function convertToRupiah(angka)
 	return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('');
 }
 
-function ubahKeuntungan() {
-  var x = document.getElementById("keuntungan").value;
-  document.getElementById("hasil").innerHTML = convertToRupiah(x * 500000);
+function prosesKeuntungan() {
+    var category = document.getElementById("category").value;
+    if (category == 'Larva') {
+        category = 28
+    } else {
+        category = 21
+    }
+
+    var lot = document.getElementById("lot").value;
+    document.getElementById("hasil").innerHTML = convertToRupiah((lot * 100000) * category / 100 );
+    return false;
 }
 
 </script>

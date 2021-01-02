@@ -15,7 +15,6 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Produk</th>
-                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -25,16 +24,15 @@
                     <th scope="row">{{$key+1}}</th>
                     <td>{{$tr->lot->ikan}}</td>
                     @if ($tr->status)
-                    <td>Dapat Ditarik</td>
-                        
-                    @else
-                    <td>Tidak Dapat Ditarik</td>
-
-                        
-                    @endif
                     <td>
                         <button type="button" class="btn btn-success">Tarik Dana</button>
                     </td>
+                    @else
+                    <td>
+                        <button type="button" class="btn btn-danger">Tidak Dapat Ditarik</button>
+                    </td>
+                    @endif
+                    
                 </tr>
                 @endforeach
                 

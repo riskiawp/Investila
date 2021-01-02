@@ -45,9 +45,9 @@ Route::get('admin/input-artikel', function () {
     return view('admin/input-artikel');
 });
 Route::get('admin/tabel-user', [UserController::class, 'index']);
-Route::get('admin/tabel-transaksi', function () {
-    return view('admin/tabel-transaksi');
-});
+
+Route::get('admin/tabel-transaksi', [TransactionController::class, 'index_admin']);
+
 Route::get('admin/tabel-lot', [LotController::class, 'tampil_lot']);
 Route::get('admin/tabel-artikel', [ArticleController::class, 'tampil_article']);
 
@@ -68,6 +68,11 @@ Route::get('user/product', [ProductController::class, 'tampil_produk']);
 Route::get('user/product/detail-product/{id}', [ProductController::class, 'detail_produk']);
 
 Route::get('user/pendanaan', [TransactionController::class, 'index']);
+
+Route::post('user/pendanaan', [TransactionController::class, 'input']);
+
+Route::get('admin/tabel-transaksi/{id}', [TransactionController::class, 'delete_transaksi']);
+
 
 Route::get('user/about-us', function () {
     return view('user/about-us');
