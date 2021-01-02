@@ -39,6 +39,7 @@
                             <th>Date</th>
                             <th>Action</th>
                             </tr>
+                                
                             <tr>
                             <td>1</td>
                             <td>riskiawp</td>
@@ -46,19 +47,6 @@
                             <td>750.000</td>
                             <td>90909090</td>
                             <td>Dapat Ditarik</td>
-                            <td>1.250K</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-primary">Update</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </td>
-                            </tr>
-                            <tr>
-                            <td>1</td>
-                            <td>riskiawp</td>
-                            <td>Penarikan</td>
-                            <td>750.000</td>
-                            <td>00000</td>
-                            <td>Tidak dapat ditarik</td>
                             <td>1.250K</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-primary">Update</a>

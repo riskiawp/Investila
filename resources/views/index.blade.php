@@ -142,8 +142,8 @@
             <div class="form-group">
                 <select name="category" id="category">
                 <option value="disabled" disabled selected>Pilih Kategori</option>
-                <option value="8 AM">8 AM</option>
-                <option value="12 PM">12 PM</option>
+                <option name="larva">Larva</option>
+                <option name="benih">Benih</option>
                 </select>
             </div>
             <div class="form-group">

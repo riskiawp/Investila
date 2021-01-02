@@ -34,12 +34,12 @@
 
         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-            <li class="nav-item"><a class="nav-link" href="{{ url('user/index') }}">Home</a></li> 
+            <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li> 
             <li class="nav-item"><a class="nav-link" href="{{ url('user/about-us') }}">About Us</a></li> 
             <li class="nav-item"><a class="nav-link" href="{{ url('user/product') }}">Product</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('user/dashboard') }}">Dashboard</a></li>
-            @if (Session::get('login'))
-            <li class="nav-item"><a class="nav-link" >{{Session::get('name')}}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('user/pendanaan') }}">Pendanaan</a></li>
+            @if (Auth::check())
+            <li class="nav-item"><a class="nav-link" >{{ Auth::user()->name }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('logout')}}">Logout</a></li>
             @else
                 <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">Login</a></li>

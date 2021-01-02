@@ -13,11 +13,7 @@ class UserController extends Controller
     public function login(Request $request){
         $user = User::where('email', $request->email)->first();
         if($user){
-            if(Hash::check($request->password, $user->password)){
-                Session::put('login', true);
-                Session::put('name', $user->name);
-                Session::put('email', $request->email);
-
+            if(Auth::attempt(['email' => $user->email, 'password' => Hash::check($request->password, $user->password)])){
                 if($user->is_admin == true){
                     Session::put('is_admin', true);
                     return redirect('/admin/tabel-user');

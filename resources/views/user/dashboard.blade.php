@@ -20,22 +20,24 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach ($trans as $key => $tr)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                    <th scope="row">{{$key+1}}</th>
+                    <td>{{$tr->lot->ikan}}</td>
+                    @if ($tr->status)
                     <td>Dapat Ditarik</td>
-                    <td>
-                        <button type="button" class="btn btn-success">Tarik Dana</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
+                        
+                    @else
                     <td>Tidak Dapat Ditarik</td>
+
+                        
+                    @endif
                     <td>
                         <button type="button" class="btn btn-success">Tarik Dana</button>
                     </td>
                 </tr>
+                @endforeach
+                
                 </tbody>
             </table>
         </div>

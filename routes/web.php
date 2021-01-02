@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\LotController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
+
 
 
 
@@ -65,9 +67,8 @@ Route::get('user/product', [ProductController::class, 'tampil_produk']);
 
 Route::get('user/product/detail-product/{id}', [ProductController::class, 'detail_produk']);
 
-Route::get('user/dashboard', function () {
-    return view('user/dashboard');
-});
+Route::get('user/pendanaan', [TransactionController::class, 'index']);
+
 Route::get('user/about-us', function () {
     return view('user/about-us');
 });
