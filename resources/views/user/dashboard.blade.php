@@ -15,6 +15,7 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Produk</th>
+                    <th scope="col">Jumlah Lot</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -23,6 +24,7 @@
                 <tr>
                     <th scope="row">{{$key+1}}</th>
                     <td>{{$tr->lot->ikan}}</td>
+                    <td>{{$tr->jumlah}}</td>
                     @if ($tr->status)
                     <td>
                         <button type="button" class="btn btn-success">Tarik Dana</button>

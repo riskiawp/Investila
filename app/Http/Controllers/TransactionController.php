@@ -25,6 +25,10 @@ class TransactionController extends Controller
                 'keuntungan' => $keuntungan,
                 'status' => 0
             ]);
+
+            $roi->jumlah_lot -= $request->jumlah;
+            $roi->save();
+
             return redirect('user/pendanaan')->with('success', 'berhasil input');
         }
     }
