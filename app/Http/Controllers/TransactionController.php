@@ -42,4 +42,12 @@ class TransactionController extends Controller
         Transaction::findOrFail($id)->delete();
         return redirect('admin/tabel-transaksi')->with('success', 'berhasil delete');
     }
+
+    public function update(Request $request){
+        Transaction::where('id',$request->id)->first()->update([
+            'status' => $request->status
+        ]);
+        return redirect('admin/tabel-transaksi')->with('success', 'berhasil input');
+
+    }
 }

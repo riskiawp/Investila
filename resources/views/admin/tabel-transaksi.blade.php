@@ -16,7 +16,7 @@
                     <div class="card-header">
                         <h4>Tabel Transaksi</h4>
                         <div class="card-header-form">
-                        <form>
+                        <form >
                             <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search">
                             <div class="input-group-btn">
@@ -39,27 +39,41 @@
                             <th>Date</th>
                             <th>Action</th>
                             </tr>
+                            <form action="{{url('admin/tabel-transaksi/update')}}" method="POST">
+                                @csrf
+
                              @foreach ($trans as $key => $tr)
-                            
+                             <input type="hidden" name="id" value="{{$tr->id}}">
+
+
                             <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$tr->user->name}}</td>
                             <td>{{$tr->lot->ikan}}</td>
                             <td>{{$tr->jumlah}}</td>
                             <td>{{$tr->keuntungan}}</td>
-                            @if ($tr->status)
-                            <td>Dapat Ditarik</td>
-                            @else
-                            <td>Tidak Dapat Ditarik</td>
-                            @endif
+                            <td>
+                            <select name="status" value="{{$tr->status}}" id="category" class="btn btn-secondary dropdown-toggle" >
+                                @if ($tr->status == 1)
+                                    <option name="tarik" value=1 selected>Dapat Ditarik</option>
+                                    <option name="gtarik" value=0 >Tidak Dapat Ditarik</option>
+                                @else
+                                    <option name="tarik" value=1>Dapat Ditarik</option>
+                                    <option name="gtarik" value=0 selected>Tidak Dapat Ditarik</option>    
+                                @endif
+                            </select>
+                            </td>
                             <td>{{$tr->created_at}}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-primary">Update</a>
+                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
                                 <a href="{{url('admin/tabel-transaksi'). '/' . $tr->id}}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
-                            </tr>
+                                </tr>
                             @endforeach
+                        </form>
+
                         </table>
+
                         </div>
                     </div>
                     <div class="card-footer text-right">

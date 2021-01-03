@@ -48,6 +48,9 @@ Route::get('admin/tabel-user', [UserController::class, 'index']);
 
 Route::get('admin/tabel-transaksi', [TransactionController::class, 'index_admin']);
 
+Route::post('admin/tabel-transaksi/update', [TransactionController::class, 'update']);
+
+
 Route::get('admin/tabel-lot', [LotController::class, 'tampil_lot']);
 Route::get('admin/tabel-artikel', [ArticleController::class, 'tampil_article']);
 
