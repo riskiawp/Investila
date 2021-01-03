@@ -44,7 +44,7 @@
                             <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$tr->user->name}}</td>
-                            <td>{{$tr->id_lot}}</td>
+                            <td>{{$tr->lot->ikan}}</td>
                             <td>{{$tr->jumlah}}</td>
                             <td>{{$tr->keuntungan}}</td>
                             @if ($tr->status)
