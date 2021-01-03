@@ -22,7 +22,7 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-Route::get('login', function () {
+Route::get('/', function () {
     return view('login');
 });
 
@@ -36,7 +36,7 @@ Route::get('register', function () {
 Route::post('register', [UserController::class, 'register']);
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('home', [HomeController::class, 'index']);
 
 Route::get('logout', [UserController::class,'logout']);
 
@@ -100,6 +100,11 @@ Route::get('lot/update/{id}', [LotController::class, 'detail_lot']);
 Route::post('lot/update', [LotController::class, 'update_lot']);
 
 Route::get('lot/delete/{id}', [LotController::class, 'delete_lot']);
+
+//transaksi
+Route::get('user/pembayaran', function () {
+    return view('user/');
+});
 
 
 
